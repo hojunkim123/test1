@@ -60,7 +60,836 @@
       padding: 6px 12px;
       border-radius: 999px;
       background: rgba(255,255,255,.16);
-      border: 1px sol일고등학교 현장체험학습 안내 페이지 · Made with ❤️ for education
+      border: 1px solid rgba(255,255,255,.22);
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .hero h1{
+      font-size: clamp(28px, 3.6vw, 44px);
+      line-height:1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .hero p{
+      font-size: 16px;
+      opacity: .95;
+      max-width: 70ch;
+    }
+
+    /* Stats */
+    .stats{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .stat{
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.20);
+      border-radius: var(--radius);
+      padding: 14px 14px;
+      color:#fff;
+      display:flex;
+      gap: 10px;
+      align-items: center;
+      min-height: 74px;
+    }
+    .stat .num{
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      min-width: 70px;
+    }
+    .stat .lbl{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .stat .lbl b{ font-size: 14px; }
+    .stat .lbl span{ font-size: 12px; opacity:.9; }
+
+    @media (max-width: 720px){
+      .stats{ grid-template-columns: 1fr; }
+      .stat .num{ min-width: 64px; }
+    }
+
+    /* Tabs (sticky) */
+    .tabs{
+      margin-top: 16px;
+      position: sticky;
+      top: 10px;
+      z-index: 10;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      padding: 10px;
+      backdrop-filter: blur(10px);
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      box-shadow: 0 10px 26px rgba(0,0,0,.12);
+    }
+    .tab{
+      border: 0;
+      cursor:pointer;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      color:#fff;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform .12s ease, background .12s ease;
+      outline: none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .tab:hover{ transform: translateY(-1px); background: rgba(255,255,255,.20); }
+    .tab[aria-selected="true"]{
+      background: #fff;
+      color: var(--accent);
+      box-shadow: 0 8px 18px rgba(0,0,0,.10);
+    }
+
+    /* Section cards */
+    .section{
+      margin-top: 18px;
+      background: var(--card);
+      border-radius: calc(var(--radius) + 4px);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.35);
+      overflow:hidden;
+    }
+
+    .section-head{
+      padding: 18px 20px 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    .kicker{
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+    .section-head h2{
+      margin-top: 6px;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+    .section-head p{
+      margin-top: 6px;
+      color: var(--muted);
+      max-width: 90ch;
+    }
+
+    .section-body{
+      padding: 16px 20px 20px;
+      display:grid;
+      gap: 14px;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    @media (max-width: 860px){ .grid2{ grid-template-columns: 1fr; } }
+
+    .card{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px 14px;
+      background: #fff;
+    }
+
+    .pill{
+      display:inline-block;
+      background: var(--pill);
+      color:#3730a3;
+      border: 1px solid rgba(55,48,163,.14);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .card h3{
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .muted{ color: var(--muted); }
+
+    .timeline{
+      border-left: 3px solid rgba(99,102,241,.35);
+      padding-left: 12px;
+      display:grid;
+      gap: 10px;
+    }
+    .time-row{
+      display:grid;
+      grid-template-columns: 88px 1fr;
+      gap: 10px;
+      align-items:flex-start;
+    }
+    .time{
+      font-weight: 800;
+      color:#111827;
+      font-size: 13px;
+      background: #f3f4f6;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 6px 10px;
+      text-align:center;
+      white-space: nowrap;
+    }
+
+    .callout{
+      background: #0f172a;
+      color:#fff;
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+    .callout b{ display:block; margin-bottom:6px; }
+    .callout ul{ opacity:.92; }
+
+    footer{
+      text-align:center;
+      color: rgba(255,255,255,.88);
+      margin-top: 22px;
+      font-size: 13px;
+    }
+
+    /* Anchor offset for sticky tabs */
+    .anchor{
+      position: relative;
+      top: -84px;
+      height: 1px;
+      visibility: hidden;
+    }
+
+    /* ===== Survey UI (추가) ===== */
+    .field{ display:grid; gap: 6px; }
+    .label{
+      font-size: 13px;
+      font-weight: 800;
+      color:#111827;
+    }
+    .hint{
+      font-size: 12px;
+      color: var(--muted);
+    }
+    input[type="text"], input[type="number"], select, textarea{
+      width:100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 14px;
+      outline: none;
+      background:#fff;
+    }
+    textarea{ resize: vertical; min-height: 120px; }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(99,102,241,.55);
+      box-shadow: 0 0 0 4px rgba(99,102,241,.12);
+    }
+
+    .btn{
+      border:0;
+      cursor:pointer;
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-weight: 900;
+      font-size: 14px;
+      background:#111827;
+      color:#fff;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      transition: transform .12s ease, opacity .12s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); opacity:.95; }
+    .btn.secondary{
+      background:#f3f4f6;
+      color:#111827;
+      border:1px solid var(--line);
+      font-weight: 800;
+    }
+    .btn-row{
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+
+    .rating{
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+    .rate{ position: relative; }
+    .rate input{
+      position:absolute;
+      opacity:0;
+      pointer-events:none;
+    }
+    .rate label{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width: 44px;
+      height: 38px;
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background:#fff;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111827;
+      transition: transform .1s ease, box-shadow .1s ease, background .1s ease;
+      user-select:none;
+    }
+    .rate label:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 8px 16px rgba(0,0,0,.06);
+    }
+    .rate input:checked + label{
+      background: var(--pill);
+      border-color: rgba(55,48,163,.18);
+      color:#3730a3;
+      box-shadow: 0 10px 18px rgba(55,48,163,.10);
+    }
+
+    .divider{ height:1px; background: var(--line); margin: 4px 0; }
+
+    .toast{
+      display:none;
+      border-radius: 14px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      color:#0f172a;
+      font-size: 13px;
+    }
+    .toast.show{ display:block; }
+    .toast.ok{
+      background: #ecfdf5;
+      border-color: rgba(16,185,129,.25);
+      color:#065f46;
+    }
+    .toast.err{
+      background: #fff1f2;
+      border-color: rgba(244,63,94,.25);
+      color:#9f1239;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="badge">🏫 진해동일고등학교 · 현장체험학습</div>
+      <h1>현장체험학습<br/> 체험학습 안내 </h1>
+      <p>
+        체험 장소에서 직접 보고·듣고·기록하며 수업과 연결되는 학습을 수행합니다.
+        아래 탭에서 일정, 준비물, 안전수칙, 활동 과제(산출물)까지 한 번에 확인하세요.
+      </p>
+
+      <div class="stats" aria-label="요약 지표">
+        <div class="stat">
+          <div class="num">1</div>
+          <div class="lbl">
+            <b>방문 장소</b>
+            <span>기관/시설 1곳 기준</span>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="num">6+</div>
+          <div class="lbl">
+            <b>주요 활동</b>
+            <span>관찰·체험·미션 수행</span>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="num">100%</div>
+          <div class="lbl">
+            <b>안전 최우선</b>
+            <span>이동·현장·귀가 점검</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="tabs" aria-label="섹션 탭">
+        <button class="tab" data-target="#overview" aria-selected="true">📌 개요</button>
+        <button class="tab" data-target="#schedule" aria-selected="false">🗓️ 일정</button>
+        <button class="tab" data-target="#prep" aria-selected="false">🎒 준비물</button>
+        <button class="tab" data-target="#safety" aria-selected="false">🧯 안전·규칙</button>
+        <button class="tab" data-target="#outputs" aria-selected="false">📝 활동·산출물</button>
+        <button class="tab" data-target="#survey" aria-selected="false">📋 결과 설문</button>
+      </nav>
+    </header>
+
+    <!-- 개요 -->
+    <div class="anchor" id="overview"></div>
+    <section class="section" aria-labelledby="h-overview">
+      <div class="section-head">
+        <div class="kicker">Overview</div>
+        <h2 id="h-overview">현장체험학습 개요</h2>
+        <p>체험학습의 목적, 학습 연결 포인트, 현장에서 수행할 기본 미션을 안내합니다.</p>
+      </div>
+
+      <div class="section-body">
+        <div class="grid2">
+          <div class="card">
+            <div class="pill">학습 목표</div>
+            <h3>보고–질문하고–정리하기</h3>
+            <ul>
+              <li>현장 관찰을 통해 수업 개념을 실제 사례와 연결한다.</li>
+              <li>질문을 설계하고 인터뷰/해설을 통해 정보를 수집한다.</li>
+              <li>기록을 근거로 결과를 요약하고 발표 자료로 구성한다.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="pill">핵심 미션</div>
+            <h3>미션 3종 세트</h3>
+            <ul>
+              <li><b>관찰 미션</b>: 설비/전시/공정 중 3가지를 선택해 특징 기록</li>
+              <li><b>질문 미션</b>: 담당자 또는 안내문 기반 질문 2개 이상 해결</li>
+              <li><b>연결 미션</b>: 교과 개념 1개를 현장 사례와 연결해 설명</li>
+            </ul>
+            <p class="muted" style="margin-top:8px;">※ 학교/학년/교과에 맞춰 문구만 바꿔서 사용하세요.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <b>담임/인솔교사 체크 포인트</b>
+          <ul>
+            <li>출발 전: 인원 점검, 비상연락망 확인, 이동 동선 공지</li>
+            <li>현장: 조별 이동, 안전선 준수, 사진 촬영 규정 안내</li>
+            <li>귀가: 최종 인원 점검, 분실물 확인, 과제 제출 일정 공지</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 일정 -->
+    <div class="anchor" id="schedule"></div>
+    <section class="section" aria-labelledby="h-schedule">
+      <div class="section-head">
+        <div class="kicker">Schedule</div>
+        <h2 id="h-schedule">일정</h2>
+        <p>시간표는 예시입니다. 학교 일정/이동 시간/기관 운영시간에 맞게 수정하세요.</p>
+      </div>
+
+      <div class="section-body">
+        <div class="card">
+          <div class="pill">당일 타임라인</div>
+          <div class="timeline">
+            <div class="time-row">
+              <div class="time">08:30</div>
+              <div>
+                <b>학교 집결 및 출석 확인</b>
+                <div class="muted">조 편성 확인, 안전수칙 최종 안내</div>
+              </div>
+            </div>
+            <div class="time-row">
+              <div class="time">09:00</div>
+              <div>
+                <b>출발</b>
+                <div class="muted">이동 중 활동지 배부 및 미션 설명</div>
+              </div>
+            </div>
+            <div class="time-row">
+              <div class="time">10:00</div>
+              <div>
+                <b>현장 도착 · 오리엔테이션</b>
+                <div class="muted">기관 안내, 촬영/이동 규정 안내</div>
+              </div>
+            </div>
+            <div class="time-row">
+              <div class="time">10:20</div>
+              <div>
+                <b>체험/견학 1</b>
+                <div class="muted">전시 관람 또는 공정 견학, 관찰 기록</div>
+              </div>
+            </div>
+            <div class="time-row">
+              <div class="time">11:30</div>
+              <div>
+                <b>중식</b>
+                <div class="muted">조별 이동, 식사 후 집합 시간 준수</div>
+              </div>
+            </div>
+            <div class="time-row">
+              <div class="time">12:30</div>
+              <div>
+                <b>체험/견학 2 · 미션 수행</b>
+                <div class="muted">질문 미션, 인터뷰/해설 정리</div>
+              </div>
+            </div>
+            <div class="time-row">
+              <div class="time">14:10</div>
+              <div>
+                <b>정리/마무리</b>
+                <div class="muted">조별 결과 공유 5분, 설문/소감 작성</div>
+              </div>
+            </div>
+            <div class="time-row">
+              <div class="time">14:30</div>
+              <div>
+                <b>학교로 이동</b>
+                <div class="muted">이동 중 과제 제출 방식 재공지</div>
+              </div>
+            </div>
+            <div class="time-row">
+              <div class="time">15:30</div>
+              <div>
+                <b>학교 도착 · 귀가 점검</b>
+                <div class="muted">인원 확인, 분실물 점검, 해산</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="pill">장소 정보</div>
+            <h3>방문 기관/장소</h3>
+            <ul>
+              <li><b>장소명</b>: (예) 지역 과학관 / 기업 홍보관 / 산업단지 지원센터</li>
+              <li><b>주소</b>: (예) ○○시 ○○구 ○○로 00</li>
+              <li><b>연락처</b>: (예) 000-0000-0000</li>
+              <li><b>집합 위치</b>: (예) 정문 앞 / 안내데스크 옆</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="pill">조 운영</div>
+            <h3>조별 역할 예시</h3>
+            <ul>
+              <li>조장: 이동/시간 관리</li>
+              <li>기록: 활동지 작성 및 사진 정리</li>
+              <li>질문: 인터뷰/질문 미션 담당</li>
+              <li>안전: 인원 확인 및 위험요소 공유</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 준비물 -->
+    <div class="anchor" id="prep"></div>
+    <section class="section" aria-labelledby="h-prep">
+      <div class="section-head">
+        <div class="kicker">Preparation</div>
+        <h2 id="h-prep">준비물</h2>
+        <p>필수/권장/금지 항목을 구분해 안내하면 학생들이 실수하지 않습니다.</p>
+      </div>
+
+      <div class="section-body">
+        <div class="grid2">
+          <div class="card">
+            <div class="pill">필수</div>
+            <h3>반드시 챙기기</h3>
+            <ul>
+              <li>학생증 또는 신분 확인 수단</li>
+              <li>필기도구, 활동지(또는 클립보드)</li>
+              <li>개인 물병, 마스크(필요 시)</li>
+              <li>휴대폰(비상연락) + 보조배터리(권장)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="pill">권장</div>
+            <h3>있으면 좋은 것</h3>
+            <ul>
+              <li>얇은 겉옷(실내외 온도차 대비)</li>
+              <li>간단한 간식(알레르기 주의)</li>
+              <li>우천 대비 우산/우비</li>
+              <li>개인 상비약(필요한 학생)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="pill">금지/주의</div>
+          <h3>반입 금지 또는 주의 물품</h3>
+          <ul>
+            <li>위험 물품(칼/라이터 등), 고가 귀중품</li>
+            <li>무단 촬영 장비(기관 규정에 따름)</li>
+            <li>확성기/스피커 등 타인에게 불편을 주는 물품</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 안전·규칙 -->
+    <div class="anchor" id="safety"></div>
+    <section class="section" aria-labelledby="h-safety">
+      <div class="section-head">
+        <div class="kicker">Safety</div>
+        <h2 id="h-safety">안전·규칙</h2>
+        <p>이동/현장/응급 상황별 행동 규칙을 짧게, 그러나 명확하게 적어두는 것이 핵심입니다.</p>
+      </div>
+
+      <div class="section-body">
+        <div class="grid2">
+          <div class="card">
+            <div class="pill">이동 안전</div>
+            <h3>버스/도보 이동</h3>
+            <ul>
+              <li>안전벨트 착용, 좌석 이동 금지</li>
+              <li>도보 이동 시 2열 대형, 무단 횡단 금지</li>
+              <li>조별로 이동, 임의 이탈 금지</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="pill">현장 규정</div>
+            <h3>기관/시설 이용</h3>
+            <ul>
+              <li>안전선·출입 제한 구역 준수</li>
+              <li>장비/전시물 무단 조작 금지</li>
+              <li>촬영 규정 준수(가능/불가 구역 구분)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="pill">비상 상황</div>
+          <h3>분실·부상·위급 시</h3>
+          <ul>
+            <li><b>즉시 조장/인솔교사에게 알리기</b></li>
+            <li>지정된 집합 장소로 이동(임의 수색 금지)</li>
+            <li>응급 처치 후 필요 시 119/기관 안전요원 요청</li>
+          </ul>
+          <p class="muted" style="margin-top:8px;">
+            비상연락망(담임/인솔/학교/기관)을 아래에 추가해 두면 완성도가 올라갑니다.
+          </p>
+
+          <pre style="margin-top:10px; background:#0b1220; color:#e5e7eb; padding:12px; border-radius:14px; overflow:auto;">
+비상연락망(예시)
+- 담임: 010-0000-0000
+- 인솔1: 010-0000-0000
+- 학교: 000-000-0000
+- 기관: 000-0000-0000
+          </pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 활동·산출물 -->
+    <div class="anchor" id="outputs"></div>
+    <section class="section" aria-labelledby="h-outputs">
+      <div class="section-head">
+        <div class="kicker">Outputs</div>
+        <h2 id="h-outputs">활동·산출물</h2>
+        <p>현장체험학습은 “기록 → 정리 → 공유”까지 가야 학습 효과가 남습니다. 아래는 제출물 예시입니다.</p>
+      </div>
+
+      <div class="section-body">
+        <div class="grid2">
+          <div class="card">
+            <div class="pill">01</div>
+            <h3>현장 기록지</h3>
+            <ul>
+              <li>관찰 대상 3개(사진/스케치 포함 가능)</li>
+              <li>핵심 키워드 5개 + 이유</li>
+              <li>오늘의 질문 2개 + 답(해설/인터뷰 근거)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="pill">02</div>
+            <h3>조별 결과 공유</h3>
+            <ul>
+              <li>5분 발표: “현장 사례 1개 + 교과 개념 1개 연결”</li>
+              <li>슬라이드 3장 이내 또는 포스터 1장</li>
+              <li>역할 분담과 근거 자료(사진/메모) 포함</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="pill">추가(선택)</div>
+          <h3>확장 과제 아이디어</h3>
+          <ul>
+            <li><b>문제 발견</b>: 현장에서 불편했던 점 1개를 찾아 개선 아이디어 제안</li>
+            <li><b>인터뷰 요약</b>: 인터뷰 내용을 5문장으로 요약 + 느낀 점</li>
+            <li><b>후속 탐구</b>: 관련 기술/직무를 조사해 진로 카드 만들기</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ 결과 설문 -->
+    <div class="anchor" id="survey"></div>
+    <section class="section" aria-labelledby="h-survey">
+      <div class="section-head">
+        <div class="kicker">Survey</div>
+        <h2 id="h-survey">현장체험학습 결과 설문</h2>
+        <p>아래 설문을 작성해 제출해 주세요. (Apps Script 연동 후 Google Sheets에 기록됩니다.)</p>
+      </div>
+
+      <div class="section-body">
+        <!-- ✅ 전체를 하나의 form으로 구성 (Apps Script 연동에 최적) -->
+        <form id="surveyForm">
+          <div class="grid2">
+            <div class="card">
+              <div class="pill">기본 정보</div>
+              <h3>학생 정보</h3>
+
+              <div class="grid2" style="margin-top:10px;">
+                <div class="field">
+                  <div class="label">학년</div>
+                  <input name="grade" type="number" min="1" max="3" placeholder="예: 2" required />
+                </div>
+
+                <div class="field">
+                  <div class="label">반</div>
+                  <input name="class" type="number" min="1" max="20" placeholder="예: 3" required />
+                </div>
+
+                <div class="field">
+                  <div class="label">번호</div>
+                  <input name="studentNo" type="number" min="1" max="40" placeholder="예: 15" required />
+                </div>
+
+                <div class="field">
+                  <div class="label">이름</div>
+                  <input name="name" type="text" placeholder="예: 홍길동" required />
+                  <div class="hint">익명 설문이면 required를 제거하세요.</div>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="field">
+                <div class="label">조(선택)</div>
+                <select name="team">
+                  <option value="">선택 안 함</option>
+                  <option>1조</option><option>2조</option><option>3조</option><option>4조</option>
+                  <option>5조</option><option>6조</option><option>7조</option><option>8조</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="pill">만족도</div>
+              <h3>5점 척도(1: 매우 아니다 ~ 5: 매우 그렇다)</h3>
+
+              <div class="field" style="margin-top:10px;">
+                <div class="label">전체적으로 이번 현장체험학습은 만족스러웠다.</div>
+                <div class="rating" role="radiogroup" aria-label="전체 만족도">
+                  <span class="rate"><input type="radio" name="overall" id="overall_1" value="1" required><label for="overall_1">1</label></span>
+                  <span class="rate"><input type="radio" name="overall" id="overall_2" value="2"><label for="overall_2">2</label></span>
+                  <span class="rate"><input type="radio" name="overall" id="overall_3" value="3"><label for="overall_3">3</label></span>
+                  <span class="rate"><input type="radio" name="overall" id="overall_4" value="4"><label for="overall_4">4</label></span>
+                  <span class="rate"><input type="radio" name="overall" id="overall_5" value="5"><label for="overall_5">5</label></span>
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="label">활동 내용(견학/체험/미션)은 흥미롭고 도움이 되었다.</div>
+                <div class="rating" role="radiogroup" aria-label="활동 만족도">
+                  <span class="rate"><input type="radio" name="activity" id="activity_1" value="1" required><label for="activity_1">1</label></span>
+                  <span class="rate"><input type="radio" name="activity" id="activity_2" value="2"><label for="activity_2">2</label></span>
+                  <span class="rate"><input type="radio" name="activity" id="activity_3" value="3"><label for="activity_3">3</label></span>
+                  <span class="rate"><input type="radio" name="activity" id="activity_4" value="4"><label for="activity_4">4</label></span>
+                  <span class="rate"><input type="radio" name="activity" id="activity_5" value="5"><label for="activity_5">5</label></span>
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="label">일정 운영(시간 배분/이동/대기)은 적절했다.</div>
+                <div class="rating" role="radiogroup" aria-label="일정 만족도">
+                  <span class="rate"><input type="radio" name="schedule" id="schedule_1" value="1" required><label for="schedule_1">1</label></span>
+                  <span class="rate"><input type="radio" name="schedule" id="schedule_2" value="2"><label for="schedule_2">2</label></span>
+                  <span class="rate"><input type="radio" name="schedule" id="schedule_3" value="3"><label for="schedule_3">3</label></span>
+                  <span class="rate"><input type="radio" name="schedule" id="schedule_4" value="4"><label for="schedule_4">4</label></span>
+                  <span class="rate"><input type="radio" name="schedule" id="schedule_5" value="5"><label for="schedule_5">5</label></span>
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="label">안전 안내(규칙/인솔/위험요소 안내)는 충분했다.</div>
+                <div class="rating" role="radiogroup" aria-label="안전 만족도">
+                  <span class="rate"><input type="radio" name="safety" id="safety_1" value="1" required><label for="safety_1">1</label></span>
+                  <span class="rate"><input type="radio" name="safety" id="safety_2" value="2"><label for="safety_2">2</label></span>
+                  <span class="rate"><input type="radio" name="safety" id="safety_3" value="3"><label for="safety_3">3</label></span>
+                  <span class="rate"><input type="radio" name="safety" id="safety_4" value="4"><label for="safety_4">4</label></span>
+                  <span class="rate"><input type="radio" name="safety" id="safety_5" value="5"><label for="safety_5">5</label></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div class="card">
+              <div class="pill">자유 의견</div>
+              <h3>좋았던 점 / 개선점</h3>
+
+              <div class="field" style="margin-top:10px;">
+                <div class="label">가장 좋았던 점은 무엇인가요?</div>
+                <textarea name="good" placeholder="예: 견학 설명이 자세해서 이해가 잘 됐다."></textarea>
+              </div>
+
+              <div class="field">
+                <div class="label">개선되었으면 하는 점이 있나요?</div>
+                <textarea name="improve" placeholder="예: 대기 시간이 길어서 체험 시간이 더 늘었으면 좋겠다."></textarea>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="pill">운영 제안</div>
+              <h3>다음 운영을 위한 아이디어</h3>
+
+              <div class="field" style="margin-top:10px;">
+                <div class="label">추가로 해보고 싶은 활동이 있나요?</div>
+                <textarea name="more" placeholder="예: 관련 직무 체험 부스, 질의응답 시간 확대 등"></textarea>
+              </div>
+
+              <div class="field">
+                <div class="label">한 줄 소감(선택)</div>
+                <input name="oneLine" type="text" placeholder="예: 다음에는 더 다양한 체험을 해보고 싶다." />
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="btn-row">
+                <button class="btn" type="submit" id="sv_submit">✅ 설문 제출</button>
+                <button class="btn secondary" type="reset" id="sv_reset">초기화</button>
+              </div>
+
+              <div id="sv_msg" class="toast" aria-live="polite" style="margin-top:10px;"></div>
+
+              <pre style="margin-top:10px; background:#0b1220; color:#e5e7eb; padding:12px; border-radius:14px; overflow:auto;">
+[Apps Script 연동용 키(그대로 전송)]
+grade, class, studentNo, name, team,
+overall, activity, schedule, safety,
+good, improve, more, oneLine, timestamp
+              </pre>
+            </div>
+          </div>
+
+          <div class="callout">
+            <b>안내</b>
+            <ul>
+              <li>개인정보 수집이 포함된다면, 목적/보관기간/동의 안내 문구를 추가하세요.</li>
+              <li>Apps Script 연결 시, 아래 JS의 <code>WEB_APP_URL</code>만 바꿔주면 됩니다.</li>
+            </ul>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 공업고등학교 현장체험학습 안내 페이지 · Made with ❤️ for education
     </footer>
   </div>
 
